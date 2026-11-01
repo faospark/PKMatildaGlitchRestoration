@@ -6,7 +6,7 @@ using PKMatildaGlitchRestoration.Patches;
 
 namespace PKMatildaGlitchRestoration;
 
-[BepInPlugin("faospark.pkmatildaglitchrestoration", "PK Matilda Glitch Restoration", "1.0.0")]
+[BepInPlugin("faospark.pkmatildaglitchrestoration", "PK Matilda Glitch Restoration", "2.0.0")]
 [BepInDependency("faospark.pkcore", BepInDependency.DependencyFlags.SoftDependency)]
 [BepInDependency("d3xMachina.suikoden_fix", BepInDependency.DependencyFlags.SoftDependency)]
 public class Plugin : BasePlugin
