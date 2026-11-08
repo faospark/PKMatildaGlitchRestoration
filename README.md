@@ -1,4 +1,4 @@
-# PKMatildaGlitchRestoration
+# P.K. - Matilda Glitch Restoration
 
 A BepInEx 6 (IL2CPP) mod for **Suikoden I & II HD Remaster** that restores the iconic PS1 **Matilda Gate Push Glitch** on the Muse–Matilda border (`vi11`) directly in memory—with full **HD Gate Sprite Synchronization** (`t_vi11_00_obj_gate01_01`) so the wooden border gate visual moves smoothly as you push it, plus an optional **Open Border** mode to completely disable the gate and its textures.
 
@@ -28,3 +28,21 @@ Configuration is generated at `BepInEx/config/faospark.pkmatildaglitchrestoratio
 # Acceptable values: Push, Open, False, true, classic, false
 EnableMatildaGateGlitch = Push
 ```
+
+---
+
+## Installation
+
+- **Prerequisite**: [BepInEx 6.0 (Unity IL2CPP x64)](https://github.com/BepInEx/BepInEx/releases/download/v6.0.0-pre.2/BepInEx-Unity.IL2CPP-win-x64-6.0.0-pre.2.zip) installed in your game root directory.
+- **Install**: Extract the release ZIP directly into your game's root directory (or place `PKMatildaGlitchRestoration.dll` into `BepInEx/plugins/`).
+- **Verify**: Launch the game; `BepInEx/LogOutput.log` will confirm `[PKMatildaGlitchRestoration] loaded successfully!`.
+
+---
+
+## Credits & Acknowledgments
+
+- **[d3xMachina](https://github.com/d3xMachina/Suikoden-Fix)**: Creator of [Suikoden-Fix](https://github.com/d3xMachina/Suikoden-Fix). Bootstrapped the foundational BepInEx IL2CPP implementation and provided early inspiration for Remaster modding.
+- **[asilverthorn](https://github.com/asilverthorn/suikoden_ref)**: Creator of [suikoden_ref](https://github.com/asilverthorn/suikoden_ref). Invaluable early reference tables, internal IDs, and save structure research.
+- **[faospark](https://github.com/faospark)**: Primary Author & Lead Researcher.
+- **Moogles & Mods Discord Community**: For ongoing support, research, collaboration, and keeping the Suikoden modding scene thriving. Join us on the [Moogles & Mods Discord](https://discord.com/invite/bSnpVBV).
+- **Framework**: [BepInEx](https://github.com/BepInEx/BepInEx) & [HarmonyX](https://github.com/BepInEx/HarmonyX).
