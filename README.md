@@ -1,4 +1,4 @@
-# P.K. - Matilda Glitch Restoration
+﻿# P.K. - Matilda Glitch Restoration
 
 A BepInEx 6 (IL2CPP) mod for **Suikoden I & II HD Remaster** that restores the iconic PS1 **Matilda Gate Push Glitch** on the Muse–Matilda border (`vi11`) directly in memory—with full **HD Gate Sprite Synchronization** (`t_vi11_00_obj_gate01_01`) so the wooden border gate visual moves smoothly as you push it, plus an optional **Open Border** mode to completely disable the gate and its textures.
 
@@ -46,3 +46,9 @@ EnableMatildaGateGlitch = Push
 - **[faospark](https://github.com/faospark)**: Primary Author & Lead Researcher.
 - **Moogles & Mods Discord Community**: For ongoing support, research, collaboration, and keeping the Suikoden modding scene thriving. Join us on the [Moogles & Mods Discord](https://discord.com/invite/bSnpVBV).
 - **Framework**: [BepInEx](https://github.com/BepInEx/BepInEx) & [HarmonyX](https://github.com/BepInEx/HarmonyX).
+
+---
+
+## License
+
+Distributed under the [MIT License](LICENSE).
