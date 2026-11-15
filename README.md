@@ -1,54 +1,40 @@
 ﻿# P.K. - Matilda Glitch Restoration
 
-A BepInEx 6 (IL2CPP) mod for **Suikoden I & II HD Remaster** that restores the iconic PS1 **Matilda Gate Push Glitch** on the Muse–Matilda border (`vi11`) directly in memory—with full **HD Gate Sprite Synchronization** (`t_vi11_00_obj_gate01_01`) so the wooden border gate visual moves smoothly as you push it, plus an optional **Open Border** mode to completely disable the gate and its textures.
+**By [faospark](https://github.com/faospark)**
+
+A **BepInEx 6 (IL2CPP)** mod for **Suikoden I & II HD Remaster** that restores the classic PS1 **Matilda Gate Push Glitch** on the Muse–Matilda border (`vi11`) in memory—complete with **HD Gate Sprite Sync** and an optional **Open Border** mode.
 
 ## Features
 
-- **[Can Be Toggled] Classic Matilda Gate Push Glitch (`Push` Mode — Default)**:
-  - Restores the classic PS1 pushable border gate on the Muse–Matilda border (`vi11`, Room 0) by patching `eventobj[6].wt = 1` and live `ehuman[14].wt = 1` in `MACHICON.EventInit`.
-  - **HD Gate Sprite Sync**: Hooks `MapBGManagerHD.RefleshObject` and `MapBGManagerHD.SetMap` to attach the HD wooden gate sprite (`t_vi11_00_obj_gate01_01`) to the live 2D gate object (`eventobj[6]`), ensuring the HD gate slides smoothly out of the way as you push it instead of leaving a stationary visual ghost that you warp through.
-- **[Can Be Toggled] Open Border Mode (`Open` Mode)**:
-  - Completely disables the 2D border gate collision (`eventobj[6]` and `eventobj[7]`, `ehuman[14]` and `ehuman[15]`, and room auto-init opcodes) and replaces the HD gate textures (`t_vi11_00_obj_gate01_01` / `t_vi11_00_obj_gate01_02`) with a 1×1 transparent sprite so you can walk freely across the Muse–Matilda border without pushing the gate.
-- **[Baked In] Zero `.bundle` Replacements**:
-  - Replaces the old `88be920ee2cf746260c35a530a4dd770.bundle` / `vi11.json` file overwrite with a lightweight, update-proof in-memory Harmony patch (`PKMatildaGlitchRestoration.dll`).
+- **Classic Matilda Gate Push (`Push` — Default)**: Restores the pushable Muse–Matilda border gate (`vi11`) and synchronizes the HD wooden gate sprite so it slides smoothly as you push it instead of leaving a static visual ghost.
+- **Open Border Mode (`Open`)**: Disables the border gate collision and hides the HD gate textures so you can walk freely across the Muse–Matilda border without pushing.
+- **In-Memory Harmony Patching**: Applies cleanly in memory with zero `.bundle` or `vi11.json` file replacements.
 
-## Configuration
-
-Configuration is generated at `BepInEx/config/faospark.pkmatildaglitchrestoration.cfg` after the first launch:
+## Configuration (`BepInEx/config/faospark.pkmatildaglitchrestoration.cfg`)
 
 ```ini
 [Suikoden 2 Matilda Gate Glitch]
-
-## Controls the Muse-Matilda border gate (vi11) behavior:
-## - Push (or true / classic): Restores the classic PS1 Matilda Gate push glitch and synchronizes the HD gate sprite (t_vi11_00_obj_gate01_01) so it moves smoothly with the pushed gate.
-## - Open: Completely disables the border gate collision and hides its HD gate textures (t_vi11_00_obj_gate01_01 / t_vi11_00_obj_gate01_02) so the border is wide open.
-## - False: Vanilla behavior (gate cannot be pushed).
-# Setting type: String
-# Default value: Push
-# Acceptable values: Push, Open, False, true, classic, false
-EnableMatildaGateGlitch = Push
+EnableMatildaGateGlitch = Push  # Push (or true/classic): pushable gate | Open: gate removed | False: vanilla
 ```
 
----
+## Requirements
+
+- **BepInEx 6.0.0-pre.2 IL2CPP**
+- **Suikoden I & II HD Remaster**
+- **Recommended:** [Suikoden Fix](https://github.com/d3xMachina/SuikodenFix) by d3xMachina
 
 ## Installation
 
-- **Prerequisite**: [BepInEx 6.0 (Unity IL2CPP x64)](https://github.com/BepInEx/BepInEx/releases/download/v6.0.0-pre.2/BepInEx-Unity.IL2CPP-win-x64-6.0.0-pre.2.zip) installed in your game root directory.
-- **Install**: Extract the release ZIP directly into your game's root directory (or place `PKMatildaGlitchRestoration.dll` into `BepInEx/plugins/`).
-- **Verify**: Launch the game; `BepInEx/LogOutput.log` will confirm `[PKMatildaGlitchRestoration] loaded successfully!`.
+1. Install [BepInEx 6.0 (Unity IL2CPP x64)](https://github.com/BepInEx/BepInEx/releases/download/v6.0.0-pre.2/BepInEx-Unity.IL2CPP-win-x64-6.0.0-pre.2.zip) into your game root directory.
+2. Place `PKMatildaGlitchRestoration.dll` into `BepInEx/plugins/`.
+3. Launch the game once to generate `BepInEx/config/faospark.pkmatildaglitchrestoration.cfg`.
 
----
+## Credits & License
 
-## Credits & Acknowledgments
-
-- **[d3xMachina](https://github.com/d3xMachina/Suikoden-Fix)**: Creator of [Suikoden-Fix](https://github.com/d3xMachina/Suikoden-Fix). Bootstrapped the foundational BepInEx IL2CPP implementation and provided early inspiration for Remaster modding.
-- **[asilverthorn](https://github.com/asilverthorn/suikoden_ref)**: Creator of [suikoden_ref](https://github.com/asilverthorn/suikoden_ref). Invaluable early reference tables, internal IDs, and save structure research.
-- **[faospark](https://github.com/faospark)**: Primary Author & Lead Researcher.
-- **Moogles & Mods Discord Community**: For ongoing support, research, collaboration, and keeping the Suikoden modding scene thriving. Join us on the [Moogles & Mods Discord](https://discord.com/invite/bSnpVBV).
-- **Framework**: [BepInEx](https://github.com/BepInEx/BepInEx) & [HarmonyX](https://github.com/BepInEx/HarmonyX).
-
----
-
-## License
+- **[faospark](https://github.com/faospark)** — Primary Author & Lead Researcher
+- **[d3xMachina](https://github.com/d3xMachina/Suikoden-Fix)** — Creator of Suikoden-Fix & BepInEx IL2CPP foundation
+- **[asilverthorn](https://github.com/asilverthorn/suikoden_ref)** — Reference tables, internal IDs, and save structure research
+- **Moogles & Mods Discord** — Community support & research ([Invite](https://discord.com/invite/bSnpVBV))
+- **Framework:** [BepInEx](https://github.com/BepInEx/BepInEx) & [HarmonyX](https://github.com/BepInEx/HarmonyX)
 
 Distributed under the [MIT License](LICENSE).
