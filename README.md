@@ -1,4 +1,4 @@
-﻿# P.K. - Matilda Glitch Restoration
+# P.K. - Matilda Glitch Restoration
 
 **By [faospark](https://github.com/faospark)**
 
